@@ -1,14 +1,14 @@
 <div class="parent-container"  [ngClass]="{'active':isActive}">
 
     <div class="side-bar">
-        <p class="side-bar-item">الرئيسية</p>
-        <p class="side-bar-item">الأخبار</p>
-        <p class="side-bar-item">تقارير و تحقيقات</p>
-        <p class="side-bar-item">انفوجرافيك</p>
-        <p class="side-bar-item">مشروعات و مبادرات</p>
-        <p class="side-bar-item">بودكاست</p>
-        <p class="side-bar-item">مقالات</p>
-        <p class="side-bar-item link">تواصل معنا</p>
+        <p (click)="changePage({page:'home'})" class="side-bar-item">الرئيسية</p>
+        <p (click)="changePage({page:'category', category:'news'})" class="side-bar-item">الأخبار</p>
+        <p (click)="changePage({page:'category', category:'reports'})" class="side-bar-item">تقارير و تحقيقات</p>
+        <p (click)="changePage({page:'category', category:'infographic'})" class="side-bar-item">انفوجرافيك</p>
+        <p (click)="changePage({page:'category', category:'projects'})" class="side-bar-item">مشروعات و مبادرات</p>
+        <p (click)="changePage({page:'category', category:'podcast'})" class="side-bar-item">بودكاست</p>
+        <p (click)="changePage({page:'category', category:'articls'})" class="side-bar-item">مقالات</p>
+        <p  class="side-bar-item link">تواصل معنا</p>
     </div>
 
 

@@ -1,1 +1,50 @@
-<p>category-page works!</p>
+<div class="parent-container">
+    <div class="actions">
+       
+        <div class="filters">
+            <button (click)="changeCategory('articals')" type="button" class="filterBtn" [ngClass]="{'active':category=='articals'}"><p>مقالات</p></button>
+            <button (click)="changeCategory('brodcast')" type="button" class="filterBtn" [ngClass]="{'active':category=='brodcast'}"><p>بودكاست</p></button>
+            <button (click)="changeCategory('projects')" type="button" class="filterBtn" [ngClass]="{'active':category=='projects'}"><p>مشروعات</p></button>
+            <button (click)="changeCategory('videos')" type="button" class="filterBtn" [ngClass]="{'active':category=='videos'}"><p>فيديوهات</p></button>
+            <button (click)="changeCategory('infographics')" type="button" class="filterBtn" [ngClass]="{'active':category=='infographics'}"><p>إنفوجرافيك</p></button>
+            <button (click)="changeCategory('reports')" type="button" class="filterBtn" [ngClass]="{'active':category=='reports'}"><p>تقارير</p></button>
+            <button (click)="changeCategory('news')" type="button" class="filterBtn" [ngClass]="{'active':category=='news'}"><p>الأخبار</p></button>
+        </div>
+        <div class="searchBox">
+            <input type="text" name="searchBox" id="searchBox" placeholder="إبحث ... ">
+            <span class="material-symbols-rounded">
+                search
+                </span>
+        </div>
+    </div>
+    <p class="section-title-2">TOP ARTICAL</p>
+    <div class="section-one">
+        <div class="trending">
+            <div class="news-section">
+                <div class="brife">
+                    <p class="title">مقالات</p>
+                    <p class="body">
+                        احصل علي الأحدث في أزمة المناخ، والتلوث، والكوارث الطبيعية، وجهود الحفظ، والمزيد من الأخبار البيئية.
+                    </p>
+                </div>
+                <app-news-card></app-news-card>
+                <app-news-card [type]="2"></app-news-card>
+            </div>
+        </div>
+        <span>
+            <app-card-one (viewEmmiter)="emmitView($event)"></app-card-one>
+        </span>
+    </div>
+    <p class="section-title">ALL ARTICALS</p>
+    <div class="section-Two">
+
+        <div class="top-stories">
+            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
+            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
+            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
+            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
+            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
+            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
+        </div>
+    </div>
+</div>

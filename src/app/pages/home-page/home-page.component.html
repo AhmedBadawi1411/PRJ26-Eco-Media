@@ -1,8 +1,10 @@
 <div class="parent-container">
     <app-header (isActiveEmmiter)="isSideBarActive=$event"></app-header>
     <div class="content-wrapper">
-        <app-landing-page></app-landing-page>
-        <app-footer></app-footer>
+        <app-landing-page (currentView)="view($event)" *ngIf="currentPage.page=='home'"></app-landing-page>
+        <app-category-page (currentView)="view($event)" *ngIf="currentPage.page=='category'"></app-category-page>
+        <app-blog-page *ngIf="currentPage.page=='blog'"></app-blog-page>
     </div>
-    <app-sidebar [isActive]="isSideBarActive"></app-sidebar>
+    <app-footer></app-footer>
+    <app-sidebar [isActive]="isSideBarActive" (currentPage)="currentPage = $event"></app-sidebar>
 </div>

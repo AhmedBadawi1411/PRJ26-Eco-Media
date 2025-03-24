@@ -1,24 +1,21 @@
 .parent-container {
     width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: auto;
-
 }
 
 .content-wrapper {
-    flex: 1;
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-
+    max-width: 1440px;
+    display: flex;
+    align-self: center;
+    position: relative;
+    margin: auto;
 }
 
 app-header {
     position: sticky;
     top: 0;
+    z-index: 999;
+    background-color: var(--background);
 }
 
 app-sidebar {

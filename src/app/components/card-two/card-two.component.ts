@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card-two',
@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './card-two.component.css'
 })
 export class CardTwoComponent {
-
+  @Output() viewEmmiter = new EventEmitter<any>()
+  onClick() {
+    this.viewEmmiter.emit({page:'blog'})
+  }
 }
