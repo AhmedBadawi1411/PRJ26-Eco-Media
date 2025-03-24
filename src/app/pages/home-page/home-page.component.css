@@ -1,0 +1,29 @@
+.parent-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+}
+
+.content-wrapper {
+    flex: 1;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+app-header {
+    position: sticky;
+    top: 0;
+}
+
+app-sidebar {
+    position: absolute;
+    top: 100px;
+    height: 100%;
+    z-index: 99;
+}

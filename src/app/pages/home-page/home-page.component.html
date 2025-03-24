@@ -1,0 +1,8 @@
+<div class="parent-container">
+    <app-header (isActiveEmmiter)="isSideBarActive=$event"></app-header>
+    <div class="content-wrapper">
+        <app-landing-page></app-landing-page>
+        <app-footer></app-footer>
+    </div>
+    <app-sidebar [isActive]="isSideBarActive"></app-sidebar>
+</div>
