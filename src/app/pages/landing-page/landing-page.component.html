@@ -8,13 +8,13 @@
            </span>
         </div>
         <span>
-            <app-card-one (viewEmmiter)="emmitView($event)"></app-card-one>
+            <app-card-one *ngIf="newsData.length>0" [data]="newsData[0]" (viewEmmiter)="emmitView($event)"></app-card-one>
         </span>
     </div>
     <p class="section-title">TOP STORIES</p>
     <div class="section-Two">
         <div class="news-section">
-            <app-news-card></app-news-card>
+            <app-news-card ></app-news-card>
             <app-news-card [type]="2"></app-news-card>
         </div>
         <div class="top-stories">
