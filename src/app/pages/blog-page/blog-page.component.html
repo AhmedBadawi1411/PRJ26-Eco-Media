@@ -6,6 +6,7 @@
   <div class="img-container">
     <img [src]="data.img" alt="" />
   </div>
+  <p class="img-footer">- {{data.imgFooter}}</p>
   <hr />
   @for(p of data.content; track $index){
     <p class="paragraoph">
@@ -13,4 +14,10 @@
     </p>
   }
   <hr />
+  <div class="writer">
+    <span class="material-symbols-rounded">
+      edit
+      </span>
+      <p>بقلم: {{data.writer}}</p>
+  </div>
 </div>

@@ -14,11 +14,10 @@ import { CommonModule } from '@angular/common';
 export class LandingPageComponent {
   constructor(private apiService: ApiService) {
     this.apiService.news$.subscribe((res) => (this.newsData = res.news));
-console.log(this.newsData);
-
   }
 
   @Output() currentView = new EventEmitter<any>();
+  
   emmitView(view:any){
     this.currentView.emit(view)
   }

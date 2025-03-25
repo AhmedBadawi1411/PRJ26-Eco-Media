@@ -53,3 +53,29 @@ hr {
     font-weight: 600;
     padding: 16px 0;
 }
+
+.writer{
+    color: var(--primary);
+    margin: auto;
+    width: 90%;
+    font-family: var(--FF-Rubik);
+    font-weight: 400;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    top: -16px;
+}
+
+.writer span{
+
+    font-size: 20px;
+}
+
+.img-footer{
+    font-family: var(--FF-Rubik);
+    font-size: 16px;
+    padding: 8px;
+    color: rgba(128, 128, 128, 0.85);
+}
