@@ -3,8 +3,8 @@
         <div class="trending">
             <p class="trending-title">رائج حالياً</p>
            <span>
-            <app-card-one (viewEmmiter)="emmitView($event)"></app-card-one>
-            <app-card-one (viewEmmiter)="emmitView($event)"></app-card-one>
+            <app-card-one *ngIf="newsData.length>1" [data]="newsData[4]" (viewEmmiter)="emmitView($event)"></app-card-one>
+            <app-card-one *ngIf="newsData.length>2" [data]="newsData[6]"(viewEmmiter)="emmitView($event)"></app-card-one>
            </span>
         </div>
         <span>
@@ -18,12 +18,9 @@
             <app-news-card [type]="2"></app-news-card>
         </div>
         <div class="top-stories">
-            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
-            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
-            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
-            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
-            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
-            <app-card-two (viewEmmiter)="emmitView($event)"></app-card-two>
+            @for(news of newsData; track $index) {
+                <app-card-two [data]="news" (viewEmmiter)="emmitView($event)"></app-card-two>
+            }
         </div>
     </div>
 </div>

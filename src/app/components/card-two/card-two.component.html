@@ -1,11 +1,11 @@
 <div class="parent-container" (click)="onClick()">
     <div class="img-container">
-        <img src="/assets/images/imgPlaceholder.jpeg" alt="">
+        <img [src]="data.img" alt="">
     </div>
     <div class="title">
-        <p>"عز يعود الي البحر ... وزارة البيئة تطلق سلحفاة نادؤة احتقالا باليوم العالمي للحياة البرية."</p>
+        <p>{{data.title}}</p>
     </div>
     <div class="category">
-        <p>التصنيف</p>
+        <p>الأخبار</p>
     </div>
 </div>
