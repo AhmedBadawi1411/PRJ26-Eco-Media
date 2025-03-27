@@ -3,11 +3,10 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
-
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   private newsSubject = new BehaviorSubject<any>({});
   news$ = this.newsSubject.asObservable();
@@ -16,14 +15,14 @@ export class ApiService {
   selectedObject$ = this.selectedObjectSubject.asObservable();
 
   getNews() {
-    this.http.get<any>('/data/news.json').subscribe(
-      res => this.newsSubject.next(res)
-    )
+    this.http
+      .get<any>('/data/news.json')
+      .subscribe((res) => this.newsSubject.next(res));
   }
-  
-  
-  public set selectedObject(v : any) {
+
+  public set selectedObject(v: any) {
+    console.log('=>', v);
+
     this.selectedObjectSubject.next(v);
   }
-  
 }

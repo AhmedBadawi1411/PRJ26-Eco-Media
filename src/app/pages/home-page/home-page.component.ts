@@ -7,6 +7,7 @@ import { CategoryPageComponent } from '../category-page/category-page.component'
 import { CommonModule } from '@angular/common';
 import { BlogPageComponent } from '../blog-page/blog-page.component';
 import { ApiService } from '../../services/api.service';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-home-page',
@@ -22,16 +23,16 @@ import { ApiService } from '../../services/api.service';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
 })
-export class HomePageComponent{
-
+export class HomePageComponent implements OnInit {
+  constructor(private sharedService: SharedService) {}
   isSideBarActive: boolean = false;
   currentPage = { page: 'home' };
 
-  view(view: any) {
-    this.currentPage = view;
-  }
-
   newsData: any = {};
 
-
+  ngOnInit(): void {
+    this.sharedService.currentPage$.subscribe(
+      (res) => (this.currentPage = res)
+    );
+  }
 }

@@ -27,7 +27,7 @@
     border-radius: 8px;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: " ...";
+    text-overflow: ellipsis;
 }
 
 .img-container::before {

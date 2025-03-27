@@ -4,6 +4,8 @@
     border-radius:8px;
     padding-bottom: 8px;
     transition: all 0.3s ease-in-out;
+    height: 100%;
+    
 }
 
 .parent-container:hover {
@@ -32,5 +34,6 @@
     color: var(--primary);
     text-align: center;
     font-family: var(--FF-Rubik);
-
+    text-align: center;
+    align-self: flex-end;
 }
