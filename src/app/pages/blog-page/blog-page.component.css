@@ -16,12 +16,12 @@
 
 .share-tip {
     background-color: var(--secondary);
-    padding: 8px 16px;
+    /* padding: 8px 16px; */
     font-size: 12px;
     font-family: var(--FF-Rubik);
     width: fit-content;
     border-radius: 8px;
-    margin: 16px 0;
+    margin: 32px 0;
 }
 
 .img-container{
