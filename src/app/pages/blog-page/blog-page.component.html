@@ -1,7 +1,7 @@
 <div class="parent-container">
   <p class="title">{{data.title}}</p>
   <div class="share">
-    <p class="share-tip"></p>
+    <p class="share-tip">شارك المقال</p>
   </div>
   <div class="img-container">
     <img [src]="data.img" alt="" />
@@ -9,7 +9,7 @@
   <p class="img-footer">- {{data.imgFooter}}</p>
   <hr />
   @for(p of data.content; track $index){
-    <p class="paragraoph">
+    <p class="paragraoph" [ngClass]="{'sub-title': isSubtitle(p)}">
       {{p}}
     </p>
   }

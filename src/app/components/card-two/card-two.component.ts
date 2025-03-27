@@ -12,6 +12,7 @@ export class CardTwoComponent {
   
   @Output() viewEmmiter = new EventEmitter<any>()
   @Input() data: any = {};
+  @Input() category: string = 'أخبار';
 
   onClick() {
     this.apiService.selectedObject=this.data;

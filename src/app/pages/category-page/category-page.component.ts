@@ -24,11 +24,19 @@ export class CategoryPageComponent implements OnInit {
   ) {}
   @Input() category: string = 'news';
   @Output() currentView = new EventEmitter<any>();
+  public pageTitle = "أخبار";
 
   newsData: any = {};
 
   ngOnInit(): void {
-    this.apiService.news$.subscribe((res) => (this.newsData = res));
+    this.sharedService.currentPage$.subscribe(
+      res => {
+       this.category = res.category
+      }
+    )
+    this.apiService.news$.subscribe((res) => {
+      this.newsData = res
+    });
   }
 
   emmitView(view: any) {
@@ -40,8 +48,27 @@ export class CategoryPageComponent implements OnInit {
   }
 
   displayDetailes(obj: any) {
-    this.sharedService.previousPage = { page: 'category' };
+    this.sharedService.previousPage = { page: 'category', category:this.category };
     this.apiService.selectedObject = obj;
     this.sharedService.currentPage = { page: 'blog' };
+  }
+
+  setTitle(category:string):string {
+    switch (category) {
+      case "news":
+        return "أخبار"
+      case "reports":
+        return "تقارير"
+      case "infographic":
+        return "انفوجرافيك"
+      case "projects":
+        return "مشروعات"
+      case "podcast":
+        return "بودكاست"
+      case "articals":
+        return "مقالات"
+      default:
+        return "أخبار";
+    }
   }
 }

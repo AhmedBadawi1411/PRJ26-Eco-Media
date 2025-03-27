@@ -1,50 +1,117 @@
 <div class="parent-container">
-    <div class="actions">
-       
-        <div class="filters">
-            <button (click)="changeCategory('articals')" type="button" class="filterBtn" [ngClass]="{'active':category=='articals'}"><p>مقالات</p></button>
-            <button (click)="changeCategory('brodcast')" type="button" class="filterBtn" [ngClass]="{'active':category=='brodcast'}"><p>بودكاست</p></button>
-            <button (click)="changeCategory('projects')" type="button" class="filterBtn" [ngClass]="{'active':category=='projects'}"><p>مشروعات</p></button>
-            <button (click)="changeCategory('videos')" type="button" class="filterBtn" [ngClass]="{'active':category=='videos'}"><p>فيديوهات</p></button>
-            <button (click)="changeCategory('infographics')" type="button" class="filterBtn" [ngClass]="{'active':category=='infographics'}"><p>إنفوجرافيك</p></button>
-            <button (click)="changeCategory('reports')" type="button" class="filterBtn" [ngClass]="{'active':category=='reports'}"><p>تقارير</p></button>
-            <button (click)="changeCategory('news')" type="button" class="filterBtn" [ngClass]="{'active':category=='news'}"><p>الأخبار</p></button>
-        </div>
-        <div class="searchBox">
-            <input type="text" name="searchBox" id="searchBox" placeholder="إبحث ... ">
-            <span class="material-symbols-rounded">
-                search
-                </span>
-        </div>
+  <div class="actions">
+    <div class="filters">
+      <button
+        (click)="changeCategory('articals')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'articals' }"
+      >
+        <p>مقالات</p>
+      </button>
+      <button
+        (click)="changeCategory('brodcast')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'podcast' }"
+      >
+        <p>بودكاست</p>
+      </button>
+      <button
+        (click)="changeCategory('projects')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'projects' }"
+      >
+        <p>مشروعات</p>
+      </button>
+      <!-- <button (click)="changeCategory('videos')" type="button" class="filterBtn" [ngClass]="{'active':category=='videos'}"><p>فيديوهات</p></button> -->
+      <button
+        (click)="changeCategory('infographic')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'infographic' }"
+      >
+        <p>إنفوجرافيك</p>
+      </button>
+      <button
+        (click)="changeCategory('reports')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'reports' }"
+      >
+        <p>تقارير</p>
+      </button>
+      <button
+        (click)="changeCategory('news')"
+        type="button"
+        class="filterBtn"
+        [ngClass]="{ active: category == 'news' }"
+      >
+        <p>الأخبار</p>
+      </button>
     </div>
-    <p class="section-title-2">TOP ARTICAL</p>
-    <div class="section-one">
-        <div class="trending">
-            <div class="news-section">
-                <div class="brife">
-                    <p class="title">مقالات</p>
-                    <p class="body">
-                        احصل علي الأحدث في أزمة المناخ، والتلوث، والكوارث الطبيعية، وجهود الحفظ، والمزيد من الأخبار البيئية.
-                    </p>
-                </div>
-                <app-news-card></app-news-card>
-                <app-news-card [type]="2"></app-news-card>
-            </div>
-        </div>
-        <span>
-            <app-card-one (viewEmmiter)="emmitView($event)"></app-card-one>
-        </span>
+    <div class="searchBox">
+      <input
+        type="text"
+        name="searchBox"
+        id="searchBox"
+        placeholder="إبحث ... "
+      />
+      <span class="material-symbols-rounded"> search </span>
     </div>
-    <p class="section-title">ALL ARTICALS</p>
-    <div class="section-Two">
+  </div>
+  <p class="section-title-2">TOP ARTICAL</p>
+  <div class="section-one">
+    <div class="trending">
+      <div class="news-section">
+        <div class="brife">
+          <p class="title">{{ setTitle(category) }}</p>
+          <p class="body">
+            احصل علي الأحدث في أزمة المناخ، والتلوث، والكوارث الطبيعية، وجهود
+            الحفظ، والمزيد من الأخبار البيئية.
+          </p>
+        </div>
+        <app-news-card></app-news-card>
+        <app-news-card [type]="2"></app-news-card>
+      </div>
+    </div>
+    <span>
+      @if (category == 'news') {
+      <app-card-one
+        [data]="newsData.news[5]"
+        (click)="displayDetailes(newsData.news[5])"
+      ></app-card-one>
 
-        <div class="top-stories">
-            <app-card-two (click)="displayDetailes({})"></app-card-two>
-            <app-card-two ></app-card-two>
-            <app-card-two ></app-card-two>
-            <app-card-two ></app-card-two>
-            <app-card-two ></app-card-two>
-            <app-card-two ></app-card-two>
-        </div>
+      } @else if (category == 'articals') {
+      <app-card-one
+        [data]="newsData.articals[1]"
+        (click)="displayDetailes(newsData.news[1])"
+      ></app-card-one>
+
+      } @else {
+      <div class="spacer">لا يوجد بيانات لعرضها حاليا</div>
+      }
+    </span>
+  </div>
+  <p class="section-title">ALL ARTICALS</p>
+  <div class="section-Two">
+    <div class="top-stories">
+      @if (category == "news") { @for (object of newsData.news; track $index) {
+      <app-card-two
+        [data]="object"
+        (click)="displayDetailes(object)"
+      ></app-card-two>
+      } } @else if (category == "articals") { @for (object of newsData.articals;
+      track $index) {
+      <app-card-two
+        category="{{ setTitle(category) }}"
+        [data]="object"
+        (click)="displayDetailes(object)"
+      ></app-card-two>
+      } } @else {
+      <div class="spacer">لا يوجد بيانات لعرضها حاليا</div>
+      }
     </div>
+  </div>
 </div>

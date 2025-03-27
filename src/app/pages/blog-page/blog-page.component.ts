@@ -17,4 +17,9 @@ export class BlogPageComponent implements OnInit {
     this.api.selectedObject$.subscribe((res) => (this.data = res));
     console.log(this.data);
   }
+
+  regexPattern = /^(?:\d+\.\s+[\p{L}\s]+|[\p{L}\s]+:)\s*$/u;
+  isSubtitle(p:string) {
+    return this.regexPattern.test(p);
+  }
 }

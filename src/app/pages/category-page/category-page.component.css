@@ -110,6 +110,9 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 16px;
+    height: 100%;
+    min-height: 200px;
+
 }
 
 .news-section {
@@ -150,6 +153,17 @@
     font-family: var(--FF-Rubik);
     color: var(--primary);
     margin-bottom: 24px;
+}
+
+.spacer{
+    width: 100%;
+    text-align: center;
+    grid-area: 1 / 1 / -1 / -1;
+    justify-self: center;
+    align-self: center;
+    font-weight: 600;
+    font-size: 24px;
+    font-family: var(--FF-Rubik);
 }
 
 @media screen AND (max-width: 900px){

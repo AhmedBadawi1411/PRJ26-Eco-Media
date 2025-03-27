@@ -5,8 +5,8 @@
 .content-wrapper {
     height: 100%;
     max-width: 1440px;
-    display: flex;
-    align-self: center;
+    /* display: flex;
+    align-self: center; */
     position: relative;
     margin: auto;
 }

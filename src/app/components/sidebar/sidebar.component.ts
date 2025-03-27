@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,7 +9,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './sidebar.component.css'
 })
 export class SidebarComponent {
-  constructor() {
+  constructor(
+    private sharedService:SharedService
+  ) {
     this.currentPage.emit({page:'home'});
   }
 
@@ -16,6 +19,6 @@ export class SidebarComponent {
   @Output() currentPage:any = new EventEmitter<any>();
 
   changePage(page:any){
-    this.currentPage.emit(page)
+    this.sharedService.currentPage = page
   }
 }
