@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { LandingPageComponent } from '../landing-page/landing-page.component';
 import { HeaderComponent } from '../../components/header/header.component';
 import { FooterComponent } from '../../components/footer/footer.component';
@@ -23,12 +23,14 @@ import { SharedService } from '../../services/shared.service';
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
 })
-export class HomePageComponent implements OnInit {
-  constructor(private sharedService: SharedService) {}
+export class HomePageComponent implements OnInit{
   isSideBarActive: boolean = false;
   currentPage = { page: 'home' };
-
   newsData: any = {};
+
+  @ViewChild('parent') parent!:ElementRef;
+
+  constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {
     this.sharedService.currentPage$.subscribe(
@@ -36,5 +38,7 @@ export class HomePageComponent implements OnInit {
         this.currentPage = res
       }
     );
+
   }
+
 }

@@ -19,7 +19,7 @@
         </div>
         <div class="top-stories">
             @for(news of newsData; track $index) {
-                <app-card-two [data]="news" (click)="displayDetailes(news)"></app-card-two>
+                <app-card-two [data]="news" (click)="displayDetailes({type:'news',data:news})"></app-card-two>
             }
         </div>
     </div>

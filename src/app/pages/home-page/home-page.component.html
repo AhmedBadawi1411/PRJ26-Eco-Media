@@ -1,4 +1,4 @@
-<div class="parent-container">
+<div #parent class="parent-container">
     <app-header (isActiveEmmiter)="isSideBarActive=$event"></app-header>
     <div class="content-wrapper">
         <app-landing-page *ngIf="currentPage.page=='home'"></app-landing-page>
