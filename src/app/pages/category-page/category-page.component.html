@@ -80,13 +80,19 @@
       @if (category == 'news') {
       <app-card-one
         [data]="newsData.news[5]"
-        (click)="displayDetailes(newsData.news[5])"
+        (click)="displayDetailes({type:'news',data:newsData.news[5]})"
       ></app-card-one>
 
       } @else if (category == 'articals') {
       <app-card-one
         [data]="newsData.articals[1]"
-        (click)="displayDetailes(newsData.news[1])"
+        (click)="displayDetailes({type:'articals',data:newsData.articals[1]})"
+      ></app-card-one>
+
+      }  @else if (category == 'infographic') {
+      <app-card-one
+        [data]="newsData.infographics[1]"
+        (click)="displayDetailes({type:'infographic',data:newsData.infographics[1]})"
       ></app-card-one>
 
       } @else {
@@ -100,16 +106,23 @@
       @if (category == "news") { @for (object of newsData.news; track $index) {
       <app-card-two
         [data]="object"
-        (click)="displayDetailes(object)"
+        (click)="displayDetailes({type:'news',data:object})"
       ></app-card-two>
       } } @else if (category == "articals") { @for (object of newsData.articals;
       track $index) {
       <app-card-two
         category="{{ setTitle(category) }}"
         [data]="object"
-        (click)="displayDetailes(object)"
+        (click)="displayDetailes({type:'articals',data:object})"
       ></app-card-two>
-      } } @else {
+      } } @else if (category == "infographic") { @for (object of newsData.infographics;
+        track $index) {
+        <app-card-two
+          category="{{ setTitle(category) }}"
+          [data]="object"
+          (click)="displayDetailes({type:'infographic',data:object})"
+        ></app-card-two>
+        } } @else {
       <div class="spacer">لا يوجد بيانات لعرضها حاليا</div>
       }
     </div>

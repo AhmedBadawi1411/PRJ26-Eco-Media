@@ -16,13 +16,11 @@ export class ApiService {
 
   getNews() {
     this.http
-      .get<any>('/data/news.json')
+      .get<any>('/data/news-final-3.json')
       .subscribe((res) => this.newsSubject.next(res));
   }
 
   public set selectedObject(v: any) {
-    console.log('=>', v);
-
     this.selectedObjectSubject.next(v);
   }
 }

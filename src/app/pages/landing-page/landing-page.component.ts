@@ -30,7 +30,12 @@ export class LandingPageComponent {
   newsData: any = {};
 
   ngOnInit(): void {
-    this.apiService.news$.subscribe((res) => (this.newsData = res.news));
+    this.apiService.news$.subscribe((res) => {
+      this.newsData = res.news
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 0);
+    });
   }
 
   displayDetailes(obj: any) {

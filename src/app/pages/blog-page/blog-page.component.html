@@ -1,23 +1,32 @@
 <div class="parent-container">
-  <p class="title">{{data.title}}</p>
-  <div class="share">
-    <p class="share-tip">شارك المقال</p>
-  </div>
-  <div class="img-container">
-    <img [src]="data.img" alt="" />
-  </div>
-  <p class="img-footer">- {{data.imgFooter}}</p>
-  <hr />
-  @for(p of data.content; track $index){
-    <p class="paragraoph" [ngClass]="{'sub-title': isSubtitle(p)}">
-      {{p}}
-    </p>
+  @if (category == 'news' || category == 'articals') {
+    <p class="title">{{data.title}}</p>
+    <div class="share">
+      <p class="share-tip">شارك المقال</p>
+    </div>
+    <div class="img-container">
+      <img [src]="data.img" alt="" />
+    </div>
+    <p class="img-footer">- {{data.imgFooter}}</p>
+    <hr />
+    @for(key of objectKeys(data.content); track $index){
+      <p class="paragraoph" [ngClass]="{'sub-title': key.includes('t'), 'p-head': key.includes('s')}">
+        {{data.content[key]}}
+      </p>
+    }
+    <hr />
+    <div class="writer">
+      <span class="material-symbols-rounded">
+        edit
+        </span>
+        <p>بقلم: {{data.writer}}</p>
+    </div>
   }
-  <hr />
-  <div class="writer">
-    <span class="material-symbols-rounded">
-      edit
-      </span>
-      <p>بقلم: {{data.writer}}</p>
-  </div>
+  @else if (category == 'infographic') {
+    <!-- <p class="title">{{data.title}}</p> -->
+    <div class="infograph-container">
+      <img [src]="data.img" alt="" srcset="">
+    </div>
+  }
 </div>
+

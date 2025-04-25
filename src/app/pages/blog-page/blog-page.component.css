@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 16px ;
+    min-height: calc(100vh - 300px);
 }
 
 .title {
@@ -36,7 +37,7 @@
 .img-container img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 hr {
@@ -85,4 +86,22 @@ hr {
     font-size: 16px;
     padding: 8px;
     color: rgba(128, 128, 128, 0.85);
+}
+
+.paragraoph.p-head {
+    font-weight: 600;
+    font-size: 17px;
+    color: gray;
+    text-decoration:underline;
+}
+
+.infograph-container {
+    max-width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+.infograph-container img {
+    width: 100%;
+    height: 98%;
 }

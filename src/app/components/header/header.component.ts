@@ -22,7 +22,9 @@ export class HeaderComponent {
 
   goBack() {
     this.sharedService.previousPage$.subscribe(
-      (res) => (this.sharedService.currentPage = res)
+      (res) => {
+        this.sharedService.currentPage = res
+      }
     );
   }
 }

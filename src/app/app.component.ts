@@ -6,7 +6,7 @@ import { MaintainenceComponent } from "./pages/maintainence/maintainence.compone
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HomePageComponent, MaintainenceComponent],
+  imports: [RouterOutlet, HomePageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -32,7 +32,9 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.sharedService.currentPage$.subscribe(
-      (res) => (this.currentPage = res)
+      (res) => {
+        this.currentPage = res
+      }
     );
   }
 }

@@ -3,12 +3,12 @@
         <div class="trending">
             <p class="trending-title">رائج حالياً</p>
            <span>
-            <app-card-one *ngIf="newsData.length>1" [data]="newsData[4]" (click)="displayDetailes(newsData[4])"></app-card-one>
-            <app-card-one *ngIf="newsData.length>2" [data]="newsData[6]" (click)="displayDetailes(newsData[6])"></app-card-one>
+            <app-card-one *ngIf="newsData.length>1" [data]="newsData[4]" (click)="displayDetailes({type:'news',data:newsData[4]})"></app-card-one>
+            <app-card-one *ngIf="newsData.length>2" [data]="newsData[6]" (click)="displayDetailes({type:'news',data:newsData[6]})"></app-card-one>
            </span>
         </div>
         <span>
-            <app-card-one *ngIf="newsData.length>0" [data]="newsData[0]" (click)="displayDetailes(newsData[0])"></app-card-one>
+            <app-card-one *ngIf="newsData.length>0" [data]="newsData[0]" (click)="displayDetailes({type:'news',data:newsData[0]})"></app-card-one>
         </span>
     </div>
     <p class="section-title">TOP STORIES</p>
