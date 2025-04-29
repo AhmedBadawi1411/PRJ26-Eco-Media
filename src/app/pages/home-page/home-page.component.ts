@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { BlogPageComponent } from '../blog-page/blog-page.component';
 import { ApiService } from '../../services/api.service';
 import { SharedService } from '../../services/shared.service';
+import { AboutusComponent } from "../aboutus/aboutus.component";
 
 @Component({
   selector: 'app-home-page',
@@ -19,7 +20,8 @@ import { SharedService } from '../../services/shared.service';
     SidebarComponent,
     CategoryPageComponent,
     BlogPageComponent,
-  ],
+    AboutusComponent
+],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
 })

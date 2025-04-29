@@ -4,6 +4,7 @@
         <app-landing-page *ngIf="currentPage.page=='home'"></app-landing-page>
         <app-category-page *ngIf="currentPage.page=='category'"></app-category-page>
         <app-blog-page *ngIf="currentPage.page=='blog'"></app-blog-page>
+        <app-aboutus *ngIf="currentPage.page=='about'"></app-aboutus>
     </div>
     <app-footer></app-footer>
     <app-sidebar [isActive]="isSideBarActive" (currentPage)="currentPage = $event"></app-sidebar>

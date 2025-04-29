@@ -1,0 +1,16 @@
+<video
+      [attr.src]="videoSourceList.length ? null : src"
+      [attr.width]="width ?? 'auto'"
+      [attr.height]="height ?? 'auto'"
+      [attr.poster]="poster"
+      [attr.controls]="controls"
+      [attr.autoplay]="autoplay"
+      [attr.playsInline]="autoplay"
+    >
+      <source
+        *ngFor="let v of videoSourceList"
+        [src]="v.src"
+        [type]="v.mimeType"
+      />
+      Your browser does not support the video tag...
+    </video>

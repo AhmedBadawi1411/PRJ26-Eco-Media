@@ -79,8 +79,8 @@
     <span>
       @if (category == 'news') {
       <app-card-one
-        [data]="newsData.news[5]"
-        (click)="displayDetailes({type:'news',data:newsData.news[5]})"
+        [data]="newsData.news[0]"
+        (click)="displayDetailes({type:'news',data:newsData.news[0]})"
       ></app-card-one>
 
       } @else if (category == 'articals') {

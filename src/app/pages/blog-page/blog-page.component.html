@@ -15,11 +15,17 @@
       </p>
     }
     <hr />
-    <div class="writer">
+    <div class="writer" *ngIf="data.writer">
       <span class="material-symbols-rounded">
         edit
         </span>
-        <p>بقلم: {{data.writer}}</p>
+        <p >بقلم: {{data.writer}}</p>
+    </div>
+    <div class="writer" *ngIf="data.interviewer">
+      <span class="material-symbols-rounded">
+        speech_to_text
+        </span>
+        <p >حوار: {{data.interviewer}}</p>
     </div>
   }
   @else if (category == 'infographic') {
