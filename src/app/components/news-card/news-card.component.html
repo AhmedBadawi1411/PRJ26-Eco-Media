@@ -15,5 +15,6 @@
             {{data.two.body}}
         }
     </p>
-    <button type="button" class="subscripe">اشترك</button>
+    <button *ngIf="type == 1" type="button" class="subscripe">اشترك</button>
+    <p *ngIf="type == 2" class="slog">{{data.two.slog}}</p>
 </div>

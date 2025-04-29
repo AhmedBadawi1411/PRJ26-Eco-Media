@@ -34,3 +34,9 @@
 .parent-container.two {
     background-color: var(--secondary);
 }
+
+.slog{
+    font-weight: 600;
+    font-family: var(--FF-Rubik);
+    color: #2E7D57;
+}
