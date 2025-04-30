@@ -33,7 +33,6 @@
 }
 
 .trending span app-card-one{
-    flex: 1;
     height: 50%;
 }
 
@@ -102,7 +101,6 @@
 
     .trending span{
         flex-direction: column;
-        height: 100%;
     }
 
     .section-Two {
