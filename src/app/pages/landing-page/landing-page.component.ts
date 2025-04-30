@@ -6,6 +6,7 @@ import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { SharedService } from '../../services/shared.service';
 import { FormsModule } from '@angular/forms';
+import { VideoPlayerComponent } from "../../components/video-player/video-player.component";
 
 @Component({
   selector: 'app-landing-page',
@@ -14,8 +15,8 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     CardOneComponent,
     CardTwoComponent,
-    NewsCardComponent,
-  ],
+    NewsCardComponent
+],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css',
 })

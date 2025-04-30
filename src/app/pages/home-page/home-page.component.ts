@@ -9,6 +9,7 @@ import { BlogPageComponent } from '../blog-page/blog-page.component';
 import { ApiService } from '../../services/api.service';
 import { SharedService } from '../../services/shared.service';
 import { AboutusComponent } from "../aboutus/aboutus.component";
+import { VideoPlayerComponent } from "../../components/video-player/video-player.component";
 
 @Component({
   selector: 'app-home-page',
@@ -20,7 +21,8 @@ import { AboutusComponent } from "../aboutus/aboutus.component";
     SidebarComponent,
     CategoryPageComponent,
     BlogPageComponent,
-    AboutusComponent
+    AboutusComponent,
+    VideoPlayerComponent
 ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.css',
@@ -29,8 +31,12 @@ export class HomePageComponent implements OnInit{
   isSideBarActive: boolean = false;
   currentPage = { page: 'home' };
   newsData: any = {};
+  muted = true;
+  counter = 15;
+  skipV =false;
 
   @ViewChild('parent') parent!:ElementRef;
+  @ViewChild('video') video!:ElementRef;
 
   constructor(private sharedService: SharedService) {}
 
@@ -41,6 +47,22 @@ export class HomePageComponent implements OnInit{
       }
     );
 
+    let counter = setInterval(() => {
+    if (this.counter > 0) {
+      this.counter--;
+    } else {
+      clearInterval(counter);
+    }
+    }, 1000);
+
   }
 
+  unmute() {
+    this.muted = false
+  }
+
+  skipVid(){
+    this.skipV=true;
+    this.video.nativeElement.style.display ='none'
+  }
 }

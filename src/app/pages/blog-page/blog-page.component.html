@@ -4,10 +4,22 @@
     <div class="share">
       <p class="share-tip">شارك المقال</p>
     </div>
-    <div class="img-container">
-      <img [src]="data.img" alt="" />
+    <div class="imgs-list">
+     <div class="img">
+      <div class="img-container">
+        <img [src]="data.img" alt="" />
+      </div>
+      <p class="img-footer" *ngIf="data.imgFooter">- {{data.imgFooter}}</p>
+     </div>
+     @if (data.img2) {
+      <div class="img">
+        <div class="img-container">
+          <img [src]="data.img2" alt="" />
+        </div>
+        <p class="img-footer" *ngIf="data.imgFooter">- {{data.imgFooter}}</p>
+       </div>
+     }
     </div>
-    <p class="img-footer">- {{data.imgFooter}}</p>
     <hr />
     @for(key of objectKeys(data.content); track $index){
       <p class="paragraoph" [ngClass]="{'p-tap': key.includes('pt'),'sub-title': key.includes('t'), 'p-head': key.includes('s')}">

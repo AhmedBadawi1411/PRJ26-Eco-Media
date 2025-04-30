@@ -4,14 +4,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 16px;
     overflow: hidden;
 }
 
 video {
     width: 100%;
-    max-width: 900px;
+    max-width: 1240px;
     aspect-ratio: 16 / 9;
-    border-radius: 16px;
     overflow: hidden;
+    background-color: rgba(128, 128, 128, 0.329);
 }
