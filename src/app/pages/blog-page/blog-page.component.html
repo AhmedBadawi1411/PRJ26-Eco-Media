@@ -1,5 +1,5 @@
 <div class="parent-container" >
-  @if (category == 'news' || category == 'articals') {
+  @if (category == 'news' || category == 'articals' || category == 'reports') {
     <p class="title">{{data.title}}</p>
     <div class="share">
       <p class="share-tip">شارك المقال</p>
@@ -10,7 +10,7 @@
     <p class="img-footer">- {{data.imgFooter}}</p>
     <hr />
     @for(key of objectKeys(data.content); track $index){
-      <p class="paragraoph" [ngClass]="{'sub-title': key.includes('t'), 'p-head': key.includes('s')}">
+      <p class="paragraoph" [ngClass]="{'p-tap': key.includes('pt'),'sub-title': key.includes('t'), 'p-head': key.includes('s')}">
         {{data.content[key]}}
       </p>
     }

@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    gap: 16px;
+    gap: 28px;
     border: 1px solid var(--secondary);
     padding: 16px;
     background-color: var(--background);
@@ -21,6 +21,7 @@
     font-family: var(--FF-Rubik);
     font-weight: 400;
     font-size: 14px;
+    line-height: 20px;
 }
 
 .subscripe {
@@ -29,6 +30,11 @@
     margin-top: 32px;
     background-color: var(--primary);
     font-family: var(--FF-Rubik);
+}
+
+.parent-container.one {
+    display: none;
+    background-color: var(--secondary);
 }
 
 .parent-container.two {

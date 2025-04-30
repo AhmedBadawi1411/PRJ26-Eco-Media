@@ -57,10 +57,44 @@ hr {
 }
 
 .paragraoph.sub-title {
+    margin-top: 16px;
     font-weight: 700;
     font-size: 18px;
     color: var(--primary);
 }
+
+.paragraoph.sub-title.p-head {
+    margin-top: 0;
+    padding-bottom: 8px;
+    font-weight: 600;
+    font-size: 17px;
+    color: gray;
+    text-decoration:underline;
+}
+
+.paragraoph.p-tap.sub-title {
+    margin-top: 0;
+    width: 90%;
+    align-self: center;
+    font-family: var(--FF-Cairo);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 4px 0;
+    padding-right: 32px;
+    color: var(--font-color);
+}
+
+.paragraoph.p-tap {
+    width: 90%;
+    align-self: center;
+    font-family: var(--FF-Cairo);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 4px 0;
+    padding-right: 32px;
+    color: var(--font-color);
+}
+
 
 .writer{
     color: var(--primary);

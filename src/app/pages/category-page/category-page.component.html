@@ -95,6 +95,12 @@
         (click)="displayDetailes({type:'infographic',data:newsData.infographics[1]})"
       ></app-card-one>
 
+      } @else if (category == 'reports') {
+        <app-card-one
+          [data]="newsData.reports[1]"
+          (click)="displayDetailes({type:'reports',data:newsData.reports[1]})"
+        ></app-card-one>
+  
       } @else {
       <div class="spacer">لا يوجد بيانات لعرضها حاليا</div>
       }
@@ -122,7 +128,14 @@
           [data]="object"
           (click)="displayDetailes({type:'infographic',data:object})"
         ></app-card-two>
-        } } @else {
+        } } @else if (category == "reports") { @for (object of newsData.reports;
+          track $index) {
+          <app-card-two
+            category="{{ setTitle(category) }}"
+            [data]="object"
+            (click)="displayDetailes({type:'reports',data:object})"
+          ></app-card-two>
+          } }@else {
       <div class="spacer">لا يوجد بيانات لعرضها حاليا</div>
       }
     </div>

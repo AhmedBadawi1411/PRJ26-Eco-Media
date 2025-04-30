@@ -33,7 +33,8 @@
 }
 
 .trending span app-card-one{
-    height: 100%;
+    flex: 1;
+    height: 50%;
 }
 
 .trending-title {

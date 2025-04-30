@@ -1,16 +1,6 @@
-<video
-      [attr.src]="videoSourceList.length ? null : src"
-      [attr.width]="width ?? 'auto'"
-      [attr.height]="height ?? 'auto'"
-      [attr.poster]="poster"
-      [attr.controls]="controls"
-      [attr.autoplay]="autoplay"
-      [attr.playsInline]="autoplay"
-    >
-      <source
-        *ngFor="let v of videoSourceList"
-        [src]="v.src"
-        [type]="v.mimeType"
-      />
-      Your browser does not support the video tag...
-    </video>
+<div class="video-container">
+  <video
+    src="https://res.cloudinary.com/dypplxusy/video/upload/v1745940722/qni0lfxithnnsi49anvs.mp4"
+    autoplay
+    ></video>
+</div>
