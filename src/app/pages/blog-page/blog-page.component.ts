@@ -3,10 +3,15 @@ import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SharedService } from '../../services/shared.service';
+import { VideoPlayerComponent } from "../../components/video-player/video-player.component";
 
 @Component({
   selector: 'app-blog-page',
-  imports: [CommonModule, FormsModule],
+  imports: [
+    CommonModule, 
+    FormsModule,
+    VideoPlayerComponent
+  ],
   templateUrl: './blog-page.component.html',
   styleUrl: './blog-page.component.css',
 })
@@ -21,6 +26,9 @@ export class BlogPageComponent implements OnInit{
       (res) => {
       this.data = res.data
       this.category = res.type 
+
+      console.log(res);
+      
     });
   }
 

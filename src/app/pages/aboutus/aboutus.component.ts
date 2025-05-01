@@ -29,16 +29,10 @@ export class AboutusComponent implements OnInit{
     this.selectedImage = this.images[this.index];
   }
 
-  imagesSlider() {
+  imagesSlider(): void {
     setInterval(() => {
-      if (this.index >= this.images.length) {
-        this.index = 0;
-        this.selectedImage = this.images[this.index];
-      } else {
-        this.selectedImage = this.images[this.index];
-      }
-
-      this.index++;
+      this.index = (this.index + 1) % this.images.length;
+      this.selectedImage = this.images[this.index];
     }, 5000);
   }
 }

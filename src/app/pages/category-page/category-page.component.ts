@@ -61,8 +61,8 @@ export class CategoryPageComponent implements OnInit {
         return "تقارير"
       case "infographic":
         return "انفوجرافيك"
-      case "projects":
-        return "مشروعات"
+      case "activities":
+        return "مبادرات وفعاليات"
       case "podcast":
         return "بودكاست"
       case "articals":

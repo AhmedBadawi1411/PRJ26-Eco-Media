@@ -1,5 +1,7 @@
+@import url(../../../animations.css);
 .parent-container{
     padding: 16px;
+    /* animation: opacityAnimation 1s ease-in-out; */
 }
 
 .actions {

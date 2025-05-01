@@ -1,3 +1,4 @@
+@import url(../../../animations.css);
 .parent-container {
     width: 100%;
     height: 100%;
@@ -6,6 +7,10 @@
     justify-content: flex-start;
     padding: 16px ;
     min-height: calc(100vh - 300px);
+    /* opacity: 1; */
+    position: relative;
+    right: 0;
+    animation: rtlAnimation 1s ease-in-out;
 }
 
 .title {
@@ -158,4 +163,21 @@ hr {
 .infograph-container img {
     width: 100%;
     height: 98%;
+}
+
+.video {
+    padding: 16px;
+}
+
+.video hr {
+    width: 100%;
+    margin: 16px auto;
+    height: 2px;
+}
+
+.video .description {
+    margin-top: 16px;
+    font-family: var(--FF-Cairo);
+    font-weight: 600;
+
 }

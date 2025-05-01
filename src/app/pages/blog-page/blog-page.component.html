@@ -45,6 +45,17 @@
     <div class="infograph-container">
       <img [src]="data.img" alt="" srcset="">
     </div>
+  } 
+  @else if (category == 'activities') {
+    <div class="video">
+      <div class="title">{{data.title}}</div>  
+    <hr>
+    <div class="video-container">
+      <app-video-player [src]="data.video"></app-video-player>
+    </div>
+    <hr>
+    <p class="description">{{data.desription}}</p>
+    </div>
   }
 </div>
 
