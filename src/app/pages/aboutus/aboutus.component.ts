@@ -27,6 +27,7 @@ export class AboutusComponent implements OnInit{
   setIndex(index:number) {
     this.index = index;
     this.selectedImage = this.images[this.index];
+    
   }
 
   imagesSlider(): void {
