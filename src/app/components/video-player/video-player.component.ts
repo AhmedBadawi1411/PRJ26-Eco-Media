@@ -29,13 +29,16 @@ export class VideoPlayerComponent implements AfterViewInit, OnChanges{
       video.playsInline = true;
     }
     
-    const playPromise = video.play();
-
-    if (playPromise !== undefined) {
-      playPromise.catch(error => {
-        console.error('Autoplay was prevented:', error);
-      });
+    if (this.autoplay) {
+      
+      const playPromise = video.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.error('Autoplay was prevented:', error);
+        });
+      }
     }
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -43,7 +46,7 @@ export class VideoPlayerComponent implements AfterViewInit, OnChanges{
       this.videoRef.nativeElement.muted = false;
       
       // If unmuting, attempt to play if not already playing
-      if (this.videoRef.nativeElement.paused) {
+      if (this.videoRef.nativeElement.paused && this.autoplay) {
         this.videoRef.nativeElement.play()
           .catch(err => console.error('Playback failed:', err));
       }

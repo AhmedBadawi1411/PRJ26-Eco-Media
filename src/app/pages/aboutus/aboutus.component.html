@@ -2,6 +2,14 @@
 <div class="parent-container">
   <h1>من نحــن؟</h1>
 
+  <app-video-player
+    [src]="
+      'https://res.cloudinary.com/dypplxusy/video/upload/v1746262736/j7blixfpkmwoaq6pidfb.mp4'
+    "
+  ></app-video-player>
+
+
+  <hr />
   <div class="image-slider">
     <img class="img" [id]="images.indexOf(selectedImage)" [src]="selectedImage" alt="" srcset="">
     <div class="dots">
@@ -16,6 +24,8 @@
     [src]="
       'https://res.cloudinary.com/dypplxusy/video/upload/v1746021760/hhkakvtmnhgwoq3doxkv.mp4'
     "
+    [autoplay]="false"
+
   ></app-video-player>
 
 
