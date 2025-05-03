@@ -26,9 +26,12 @@ export class BlogPageComponent implements OnInit{
       (res) => {
       this.data = res.data
       this.category = res.type 
+      if (this.data.type && this.data.type=="ppt") {
+        this.images = this.data.content
+        this.selectedImage = this.images[this.index];
 
-      console.log(res);
-      
+        // this.imagesSlider();
+      }
     });
   }
 
@@ -39,5 +42,24 @@ export class BlogPageComponent implements OnInit{
 
   isSubtitle(p:string) {
     return this.regexPattern.test(p) || this.regexPatternTwo.test(p) || this.regexPatternThree.test(p);
+  }
+
+
+  // PPT
+  images = [];
+
+  index=0;
+  selectedImage = this.images[this.index];
+
+  setIndex(index:number) {
+    this.index = index;
+    this.selectedImage = this.images[this.index];
+  }
+
+  imagesSlider(): void {
+    setInterval(() => {
+      this.index = (this.index + 1) % this.images.length;
+      this.selectedImage = this.images[this.index];
+    }, 10000);
   }
 }
