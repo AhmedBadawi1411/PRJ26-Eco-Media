@@ -10,10 +10,10 @@
         <p>مقالات</p>
       </button>
       <button
-        (click)="changeCategory('brodcast')"
+        (click)="changeCategory('podcasts')"
         type="button"
         class="filterBtn"
-        [ngClass]="{ active: category == 'podcast' }"
+        [ngClass]="{ active: category == 'podcasts' }"
       >
         <p>بودكاست</p>
       </button>
@@ -77,7 +77,7 @@
     @else if (category == "activities") {
       TOP INITIATIVE
     }    
-    @else if (category == "podcast") {
+    @else if (category == "podcasts") {
       TOP PODCAST
     } 
   </p>
@@ -123,9 +123,9 @@
 
       } @else if (category == 'reports') {
       <app-card-one
-        [data]="newsData.reports[4]"
+        [data]="newsData.reports[0]"
         (click)="
-          displayDetailes({ type: 'reports', data: newsData.reports[4] })
+          displayDetailes({ type: 'reports', data: newsData.reports[0] })
         "
       ></app-card-one>
 
@@ -137,7 +137,15 @@
           "
         ></app-card-one>
   
-        }@else {
+        }@else if (category == 'podcasts') {
+          <app-card-one
+            [data]="newsData.podcasts[0]"
+            (click)="
+              displayDetailes({ type: 'podcasts', data: newsData.podcasts[0] })
+            "
+          ></app-card-one>
+    
+          }@else {
       <div class="spacer">لا يوجد بيانات لعرضها حاليا</div>
       }
     </span>
@@ -197,7 +205,14 @@
           [data]="object"
           (click)="displayDetailes({ type: 'activities', data: object })"
         ></app-card-two>
-        } }@else {
+        } }@else if (category == "podcasts") { @for (object of newsData.podcasts;
+          track $index) {
+          <app-card-two
+            category="{{ setTitle(category) }}"
+            [data]="object"
+            (click)="displayDetailes({ type: 'podcasts', data: object })"
+          ></app-card-two>
+          } }@else {
       <div class="spacer">لا يوجد بيانات لعرضها حاليا</div>
       }
     </div>
